@@ -48,7 +48,7 @@
     <div id = "main">
     	<div id = "plantArea">
     		<div id = "root">
-	    		<img class = "plant" src = "plant2.png" v-for = "object in objects" width = "180px">
+	    		<img class = "plant" v-bind:src = "object" v-for = "object in objects" width = "180px">
     		</div>
     	</div>
     	<div id = "potArea">
@@ -63,49 +63,50 @@
   	new Vue({
 	el: '#grid',
 	data: {
-		objects: [],
-		image: '',
-		},
+		objects: [
+		],
+	},
 	methods: {
 		click1() {
 			if (this.objects.length < 5) {
 				this.image = "1";
-				this.objects.push("test");
+				this.objects.push("plant1.png");
 			}
 		},
 		click2() {
 			if (this.objects.length < 5) {
+				this.image = "2";
 				this.objects.push("plant2.png");
 			}
 		},
 		click3() {
 			if (this.objects.length < 5) {
-				this.objects.push("button three");
+				this.objects.push("plant3.png");
 			}
 		},
 		click4() {
 			if (this.objects.length < 5) {
-				this.objects.push("button four");
+				this.objects.push("plant4.png");
 			}
 		},
 		click5() {
 			if (this.objects.length < 5) {
-				this.objects.push("button five");
+				this.objects.push("plant5.png");
 			}
 		},
 		click6() {
 			if (this.objects.length < 5) {
-				this.objects.push("button six");
+				this.objects.push("plant6.png");
 			}
 		},
 		click7() {
 			if (this.objects.length < 5) {
-				this.objects.push("button seven");
+				this.objects.push("plant7.png");
 			}
 		},
 		click8() {
 			if (this.objects.length < 5) {
-				this.objects.push("button eight");
+				this.objects.push("plant8 (1).png");
 			}
 		},
 		reset() {
