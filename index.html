@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    
+    <title>Plant Mom</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://unpkg.com/vue@2.5.13/dist/vue.js"></script> 
+    <link href="https://fonts.googleapis.com/css?family=Amatic+SC|Indie+Flower" rel="stylesheet"> 
+
+</head>
+  
+<body>
+
+<div id="container">
+   <div id="body">
+   		<div id="grid">
+    <div id = "sidebar">
+    	<div id = "content">
+    	<div id = "header">
+    		<div id = "title">
+    			Plant Mom
+    		</div>
+    		<div id = "instructions">
+    			Click on a plant icon to put it in your planter
+    		</div>
+    	</div>
+    	<div id = "plantButtons">
+    		<div id = "columnA">
+	    		<button class="circle" id = "button1" v-on:click = "click1"><img class = "icon" src = "plant1.png" width = "40px"></button>
+	    		<button class="circle" id = "button2" v-on:click = "click2"><img class = "icon" src = "plant2.png" width = "40px"></button>
+	    		<button class="circle" id = "button3" v-on:click = "click3"><img class = "icon" src = "plant3.png" width = "40px"></button>
+	    		<button class="circle" id = "button7" v-on:click = "click7"><img class = "icon" src = "plant7.png" width = "40px"></button>
+    		</div>
+    		<div id = "columnB">
+	    		<button class="circle" id = "button4" v-on:click = "click4"><img class = "icon" src = "plant4.png" width = "40px"></button>
+	    		<button class="circle" id = "button5" v-on:click = "click5"><img class = "icon" src = "plant5.png" width = "40px"></button>
+	    		<button class="circle" id = "button6" v-on:click = "click6"><img class = "icon" src = "plant6.png" width = "40px"></button>
+	    		<button class="circle" id = "button8" v-on:click = "click8"><img class = "icon" src = "plant8 (1).png" width = "40px"></button>
+	    		</div>
+    	</div>
+    	<div id = "reset">
+    	<button id = "resetButton" v-on:click = "reset">Reset</button>
+    	</div>
+		</div>
+    </div>
+    <div id = "main">
+    	<div id = "plantArea">
+    		<div id = "root">
+	    		<img class = "plant" src = "plant2.png" v-for = "object in objects" width = "180px">
+    		</div>
+    	</div>
+    	<div id = "potArea">
+    		<img id = "pot" src = "flowerpot3.png" width = "1000px">
+    	</div>
+
+
+    </div>
+  </div>
+
+  <script>
+  	new Vue({
+	el: '#grid',
+	data: {
+		objects: [],
+		image: '',
+		},
+	methods: {
+		click1() {
+			if (this.objects.length < 5) {
+				this.image = "1";
+				this.objects.push("test");
+			}
+		},
+		click2() {
+			if (this.objects.length < 5) {
+				this.objects.push("plant2.png");
+			}
+		},
+		click3() {
+			if (this.objects.length < 5) {
+				this.objects.push("button three");
+			}
+		},
+		click4() {
+			if (this.objects.length < 5) {
+				this.objects.push("button four");
+			}
+		},
+		click5() {
+			if (this.objects.length < 5) {
+				this.objects.push("button five");
+			}
+		},
+		click6() {
+			if (this.objects.length < 5) {
+				this.objects.push("button six");
+			}
+		},
+		click7() {
+			if (this.objects.length < 5) {
+				this.objects.push("button seven");
+			}
+		},
+		click8() {
+			if (this.objects.length < 5) {
+				this.objects.push("button eight");
+			}
+		},
+		reset() {
+			var count = this.objects.length;
+			for (i = 0; i < count; i++) {
+				this.objects.pop();
+			}
+		},
+	},
+	});
+
+  </script>
+
+
+   </div>
+   <div id="footer"><a href = "https://github.com/singseraphim/creativelab03.git"><img src = "git.svg" width = "40px"></a></div>
+</div>
+
+</body>
+
+</html>
